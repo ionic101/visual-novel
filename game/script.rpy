@@ -1,27 +1,18 @@
-﻿define gg = Character('Миша', color="#e8e813")
-define d = Character("Директор", color="#e8132f")
+﻿define gg = Character("Главный герой", color="#e8e813")
+define dad = Character("Отец", color="#1dd90f")
 
 image dark = "bg_dark.png"
 image office = "bg_office.png"
 image workplace = "bg_workplace.png"
 image urfu = "bg_urfu.png"
-image home = "bg_home.png"
+image home_parents = "bg_home_parents.png"
+image home_gg = "bg_home_gg.png"
 
-image director_image:
-    "ch_director.png"
-    ypos 1700
+define delay_time = 3
 
 label start:
-    scene urfu
-
-    show director_image
-
-    gg "Вы создали новую игру Ren'Py."
-
-    d "Хай!"
-
-    
-
-    gg "Добавьте сюжет, изображения и музыку и отправьте её в мир!"
+    call prologue
+    call episode_1
+    call episode_2
 
     return

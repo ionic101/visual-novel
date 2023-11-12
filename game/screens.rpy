@@ -4,6 +4,14 @@
 
 init offset = -1
 
+define authors = """
+Авторы:
+ - Андрей (тимлид)
+ - Ваня (программист)
+ - Вика (дизайнер)
+ - Арсений (сценарист)
+ - Артур (геймдизайнер)
+ - Никита (аналитик)"""
 
 ################################################################################
 ## Стили
@@ -542,6 +550,8 @@ style return_button:
 
 screen about():
 
+    
+
     tag menu
 
     ## Этот оператор включает игровое меню внутрь этого экрана. Дочерний vbox
@@ -560,6 +570,7 @@ screen about():
                 text "[gui.about!t]\n"
 
             text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _(authors)
 
 
 style about_label is gui_label
