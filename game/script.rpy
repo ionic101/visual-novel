@@ -1,22 +1,18 @@
-﻿# Вы можете расположить сценарий своей игры в этом файле.
+﻿define gg = Character("Главный герой", color="#e8e813")
+define dad = Character("Отец", color="#1dd90f")
 
-# Определение персонажей игры.
-define e = Character('Эйлин', color="#c8ffc8")
+image dark = "bg_dark.png"
+image office = "bg_office.png"
+image workplace = "bg_workplace.png"
+image urfu = "bg_urfu.png"
+image home_parents = "bg_home_parents.png"
+image home_gg = "bg_home_gg.png"
 
-# Вместо использования оператора image можете просто
-# складывать все ваши файлы изображений в папку images.
-# Например, сцену bg room можно вызвать файлом "bg room.png",
-# а eileen happy — "eileen happy.webp", и тогда они появятся в игре.
+define delay_time = 3
 
-# Игра начинается здесь:
 label start:
-
-    scene bg room
-
-    show eileen happy
-
-    e "Вы создали новую игру Ren'Py."
-
-    e "Добавьте сюжет, изображения и музыку и отправьте её в мир!"
+    call prologue
+    call episode_1
+    call episode_2
 
     return

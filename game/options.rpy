@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## Версия игры.
 
-define config.version = "1.0"
+define config.version = "0.1"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
@@ -121,7 +121,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 32
 
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а
@@ -188,7 +188,8 @@ init python:
 
     ## Чтобы архивировать файлы, классифицируйте их, например, как 'archive'.
 
-    # build.classify('game/**.png', 'archive')
+    build.classify('game/**.png', 'archive')
+    build.classify('game/**.rpy', 'archive')
     # build.classify('game/**.jpg', 'archive')
 
     ## Файлы, соответствующие образцам документации, дублируются в приложениях
