@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 316: the ypos keyword argument was not given a value.
+    ypos 
+         ^
+
+Ren'Py Version: Ren'Py 8.1.3.23091805
+Sat Dec  9 22:16:07 2023

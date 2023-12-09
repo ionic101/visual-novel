@@ -299,16 +299,21 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
+            xpos gui.navigation_xpos
+            ypos gui.navigation_ypos
+
             textbutton _("Начать") action Start()
 
         else:
+
+            xpos 100
+            ypos 300
 
             textbutton _("История") action ShowMenu("history")
 
@@ -366,8 +371,8 @@ screen main_menu():
     add gui.main_menu_background
 
     ## Эта пустая рамка затеняет главное меню.
-    frame:
-        style "main_menu_frame"
+    #frame:
+    #    style "main_menu_frame"
 
     ## Оператор use включает отображение другого экрана в данном. Актуальное
     ## содержание главного меню находится на экране навигации.
