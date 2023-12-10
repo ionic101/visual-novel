@@ -20,7 +20,7 @@ define config.name = _("junior's way")
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
 ## Установите на False, чтобы спрятать заголовок.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## Версия игры.
@@ -121,13 +121,13 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 32
+default preferences.text_cps = 50
 
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а
 ## от 0 до 30 — вполне допустимый диапазон.
 
-default preferences.afm_time = 15
+default preferences.afm_time = 5
 
 
 ## Директория сохранений #######################################################

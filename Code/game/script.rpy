@@ -10,7 +10,7 @@ image workplace = "images/backgrounds/bg_workplace.png"
 image urfu = "images/backgrounds/bg_urfu.png"
 image home = "images/backgrounds/bg_home_gg.png"
 image boss_office = "images/backgrounds/bg_boss_office.png"
-image scene_image = "images/backgrounds/bg_scene.png"
+image bg_scene = "images/backgrounds/bg_scene.png"
 image machine_image = "images/backgrounds/bg_coffee.png"
 image park = "images/backgrounds/bg_park.png"
 image room = "images/backgrounds/bg_room.png"
@@ -59,7 +59,6 @@ label start:
     call episode_6
     call episode_7
     call episode_8
-    call episode_9
     call show_end_credit
 
     return
