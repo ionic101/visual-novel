@@ -2,7 +2,7 @@ define mother = Character("Мама", color="#da8a09")
 
 
 image sc_episode_2 = "images/episodes/episode_2.png"
-
+image phone = "images/objects/phone.png"
 
 label episode_2:
     call start_episode_2
@@ -23,11 +23,12 @@ label call_parents:
     scene home with dissolve
 
     "Ну вот и всё… Ещё один этап жизни позади. Это было славное время. Столько тёплых воспоминаний о студенческой жизни. Эх… Пройти бы ещё раз это всё. Я уже скучаю по своим друзьям. "
-
     #звонок
+    call phone_call
     play sound "sounds/phone_ring.mp3" loop
     pause
     stop sound
+    hide phone
     #Сцена переключается на телефон, где на экране видно, что главному герою звонит мама
     gg "-Алло"
     mother "-Алло, сынок привет!"
@@ -49,5 +50,25 @@ label call_parents:
     #окончания звонка
 
     "Эхх… А ведь на самом деле мама права… Я уже столько лет сижу у родителей на шее. Надо действовать. Ведь как говорил классик: Безделье — игрушка дьявола. Я прямо сейчас сяду и найду работу! Просто вот так сяду и найду!"
+
+    return
+
+label phone_call:
+    show phone:
+        xpos 850
+        ypos 425
+
+        # Анимация тряски телефона
+        linear 0.1 xpos 840
+        linear 0.1 ypos 430
+        linear 0.1 xpos 860
+        linear 0.1 ypos 420
+        linear 0.1 xpos 850
+        linear 0.1 ypos 425
+
+        # Пауза для эффекта тряски
+        pause 0.5
+
+        repeat
 
     return
