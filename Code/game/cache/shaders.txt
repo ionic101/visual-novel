@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 renpy.alpha renpy.texture
 =======
 >>>>>>> Teamlead
@@ -10,3 +11,14 @@ renpy.alpha renpy.geometry renpy.texture
 renpy.dissolve renpy.dissolve
 renpy.solid
 renpy.texture
+=======
+renpy.solid
+renpy.dissolve renpy.geometry
+renpy.ftl
+renpy.alpha renpy.texture
+renpy.geometry renpy.texture
+renpy.dissolve renpy.dissolve
+renpy.geometry renpy.solid
+renpy.texture
+renpy.alpha renpy.geometry renpy.texture
+>>>>>>> Teamlead
