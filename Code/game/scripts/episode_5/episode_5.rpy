@@ -101,6 +101,6 @@ label task_2:
 
     gg "-Ростислав Вадимович, я сделаю всё что в моих силах"
 
-    #minigame
+    call start_game_sql
 
     return

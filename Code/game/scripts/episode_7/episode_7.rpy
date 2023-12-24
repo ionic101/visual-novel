@@ -39,12 +39,14 @@ label company_party:
 
     hide boss_image with dissolve
 
+    show gg_image
     "{i}*Вдалеке офиса я замечаю кого-то уже знакомого*"
     "О боже кто это…"
     "{i}*Время как будто остановилось, а сердце начало биться всё быстрее и быстрее*"
     "Какая изящная походка, какие милые черты лица… А глаза… Глаза — это искры, которые разжигают во мне пламя страсти. А какая красивая у неё…"
 
-    show girl_image with dissolve
+    show gg_image at right
+    show girl_image at left with dissolve
 
     girl "Привет!"
     gg "Ой… Пр.. Привет."
