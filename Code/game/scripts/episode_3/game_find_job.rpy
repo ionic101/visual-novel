@@ -67,7 +67,6 @@ screen ScreenMenu:
     
 
 
-
 screen Mail:
     image "images/JobHunter/mail/bg_mail_screen.png"
 
@@ -96,7 +95,7 @@ label slot1_screen:
     scene screen_job_1
 
     $ slot1 = True  
-    
+    stop sound
     "Хмм…"
     "Автоматизация бизнес-процессов — это конечно интересно. Но я ни разу не работал с программами семейства 1С, поэтому вряд ли у меня есть какие-то шансы успешно пройти собеседование."
     
