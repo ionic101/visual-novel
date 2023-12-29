@@ -18,14 +18,20 @@ label start_episode_3:
 
 label find_job:
     scene home with dissolve
-    
+    show gg_image
     "Таакс… Надо бы посмотреть вакансии на сайте JobQuestHub.com"
+    hide gg_image
+    stop bgm
+    play bgm "sounds/bg_rave.mp3"
 
     call screen ScreenMenu
+    stop bgm
     call screen Mail
-
+    play bgm "sounds/bg_main_music.mp3"
     scene home
 
+    show gg_image
     "Вот и все! Резюме отправлено! Теперь жду ответного сообщения..."
+    hide gg_image
 
     return

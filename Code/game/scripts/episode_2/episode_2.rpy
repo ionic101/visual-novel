@@ -22,11 +22,13 @@ label start_episode_2:
 
 label call_parents:
     scene home with dissolve
-
+    play bgm "sounds/bg_main_music.mp3" volume 2
+    show gg_blissful with dissolve
     "Ну вот и всё… Ещё один этап жизни позади. Это было славное время. Столько тёплых воспоминаний о студенческой жизни. Эх… Пройти бы ещё раз это всё. Я уже скучаю по своим друзьям. "
-
+    stop bgm
+    hide gg_blissful
     call phone_call
-
+    play bgm "sounds/bg_main_music.mp3" volume 2
     gg "-Алло"
     mother "-Алло, сынок привет!"
     gg "-Привет мам…"
@@ -46,7 +48,9 @@ label call_parents:
 
     #окончания звонка
 
+    show gg_blissful
     "Эхх… А ведь на самом деле мама права… Я уже столько лет сижу у родителей на шее. Надо действовать. Ведь как говорил классик: Безделье — игрушка дьявола. Я прямо сейчас сяду и найду работу! Просто вот так сяду и найду!"
+    hide gg_blissful
 
     return
 
