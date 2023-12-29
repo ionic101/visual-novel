@@ -72,8 +72,18 @@ init python:
                 ),
                 HintMenu(
                     Hint(text="AND", status=True, display_color=Colors.blue),
-                    Hint(text="OR", status=False, display_color=Colors.blue),
+                    Hint(text="OR", status=False, display_color=Colors.blue, comment="Надо использовать AND!"),
 
+                ),
+                HintMenu(
+                    Hint(text="Rating", status=True),
+                    Hint(text="FullName", status=False, comment="Как можно сравнивать имя человека с числом? Это же бред!"),
+                ),
+                HintMenu(
+                    Hint(text=">", status=True)
+                ),
+                HintMenu(
+                    Hint(text="заданное_значение_рейтинга;", status=True),
                 )
             ],
             code_blocks = [
@@ -83,11 +93,10 @@ init python:
     )
 
     def get_skip_letters(line_index):
-        return sum(map(lambda block: len(block.text), sql_code.code_lines[line_index].code_blocks))
+        return sum(map(lambda block: len(block.text) + 1, sql_code.code_lines[line_index].code_blocks))
     
     def todo(last_line_index, hint):
         hint_menu_statuses.append(hint)
-        #sql_code.code_lines[last_line_index].code_blocks.insert(len(sql_code.code_lines[last_line_index].code_blocks) - 2, CodeBlock(hint.text, hint.display_color))
         sql_code.code_lines[last_line_index].code_blocks.append(CodeBlock(hint.text, hint.display_color))
 
 
@@ -102,12 +111,10 @@ define start_y_pos = 243
 
 $ start_x_pos += 200
 
-define font_size = 25
-define letter_width = 15
+define font_size = 20
+define letter_width = 12
 define letter_height = 30
-define button_height = 32
-
-
+define button_height = 30
 
 
 image bg_vs = "images/SQL/bg_screen.png"
@@ -115,7 +122,7 @@ image bg_vs = "images/SQL/bg_screen.png"
 
 label start_game_sql:
     
-    scene bg_vs
+    scene bg_vs with fade
 
     python:
         global hint_menu_statuses
@@ -148,7 +155,7 @@ label start_game_sql:
                     renpy.hide_screen("CodeDisplay")
 
                     break
-    "qweqwewe!"
+    
     return
 
 
@@ -158,7 +165,7 @@ screen CodeDisplay(last_line_index):
         $ skip_letters = 0
         for code_block in sql_code.code_lines[line_index].code_blocks:
             $ new_xpos = start_x_pos + letter_width * skip_letters
-            $ new_ypos = start_y_pos + button_height * line_index
+            $ new_ypos = start_y_pos + letter_height * line_index
             add Text(code_block.text, color=code_block.color, xpos=new_xpos, ypos=new_ypos, size=font_size, font="FiraCode-Light.ttf")
             $ skip_letters += len(code_block.text) + 1
 
@@ -178,4 +185,4 @@ screen HintDisplay(last_line_index, hint_menu):
             action [Function(todo, last_line_index, hint), Return(), Hide("HintDisplay")]
             
     
-        add Text(hint.text, color=hint.color, xpos=new_xpos, ypos=new_ypos)
+        add Text(hint.text, color=hint.color, xpos=new_xpos, ypos=new_ypos, size=font_size, font="FiraCode-Light.ttf")
