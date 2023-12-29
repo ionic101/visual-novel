@@ -61,6 +61,4 @@ label start:
     call episode_8
     call show_end_credit
 
-    #call start_game_sql
-
     return
