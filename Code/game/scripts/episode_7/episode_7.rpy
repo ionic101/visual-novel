@@ -20,7 +20,8 @@ label start_episode_7:
 label company_party:
     scene office with dissolve
 
-    show boss_image with dissolve
+    show boss_image at left with dissolve
+    show gg_image at right with dissolve
 
     boss "Здравствуй, [gg.name], как тебе наш праздничный банкет?"
     
@@ -36,8 +37,10 @@ label company_party:
     boss ": Видите ли этот проект противоречит его моральным ценностям. Где он раньше то был. Ну ничего, я уверен его жизнь будет полна “счастья” после таких выходок! Ха-ха."
     gg "….."
     boss "Он видимо не понимает какое сладкое будущее ждёт нас – создателей этого проекта. Ну что ж отдохни и расслабься сегодня, ты заслужил, но впереди ещё много работы."
-
+    hide gg_image with dissolve
     hide boss_image with dissolve
+    stop bgm
+    play bgm "sounds/bg_romantic.mp3"
 
     "{i}*Вдалеке офиса я замечаю кого-то уже знакомого*"
     "О боже кто это…"
@@ -57,6 +60,7 @@ label company_party:
     girl "Полностью согласна, он хоть и был занудой, но всегда оставался человеком. Может ну этот скучный корпоратив, пойдём прогуляемся?"
     gg "Конечно, я только за!"
 
+    stop bgm
     return
 
 

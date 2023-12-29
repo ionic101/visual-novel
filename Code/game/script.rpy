@@ -17,7 +17,19 @@ image room = "images/backgrounds/bg_room.png"
 
 
 image gg_image:
-    "images/characters/ch_gg.png"
+    "images/characters/ch_gg_normal.png"
+    zoom 0.4
+    ycenter 1.0
+image gg_blissful:
+    "images/characters/ch_gg_blissful.png"
+    zoom 0.4
+    ycenter 1.0
+image gg_embarrassed:
+    "images/characters/ch_gg_embarrassed.png"
+    zoom 0.4
+    ycenter 1.0
+image gg_pleased:
+    "images/characters/ch_gg_pleased.png"
     zoom 0.4
     ycenter 1.0
 
@@ -25,9 +37,33 @@ image girl_image:
     "images/characters/ch_girl.png"
     zoom 0.4
     ycenter 1.0
+image girl_flirty:
+    "images/characters/ch_girl_flirty.png"
+    zoom 0.4
+    ycenter 1.0
+image girl_sad:
+    "images/characters/ch_girl_sad.png"
+    zoom 0.4
+    ycenter 1.0
 
 image boss_image:
-    "images/characters/ch_boss.png"
+    "images/characters/ch_boss_normal.png"
+    zoom 0.4
+    ycenter 1.0
+image boss_ashamed:
+    "images/characters/ch_boss_ashamed.png"
+    zoom 0.4
+    ycenter 1.0
+image boss_disappointed:
+    "images/characters/ch_boss_disappointed.png"
+    zoom 0.4
+    ycenter 1.0
+image boss_confused:
+    "images/characters/ch_boss_confused.png"
+    zoom 0.4
+    ycenter 1.0
+image boss_sad:
+    "images/characters/ch_boss_sad.png"
     zoom 0.4
     ycenter 1.0
 

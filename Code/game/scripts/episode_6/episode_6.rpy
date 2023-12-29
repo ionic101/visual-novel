@@ -24,7 +24,7 @@ label project_presentation:
 
     senior " Всё на высоте, но на всякий случай, проверим оборудование ещё раз, а вы пока повторите текст."
     show senior_image at left with dissolve
-
+    show gg_image at right
     senior "[gg.name], проверь, пожалуйста, ПК, с которого мы будем демонстрировать проект."
 
     gg "Секундочку, сейчас всё будет."
