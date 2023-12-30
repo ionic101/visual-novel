@@ -6,12 +6,17 @@ init offset = -1
 
 define authors = """
 Авторы:
- - Андрей (тимлид)
- - Ваня (программист)
- - Вика (дизайнер)
- - Арсений (сценарист)
- - Артур (геймдизайнер)
- - Никита (аналитик)"""
+ - Андрей Шестопалов (тимлид)
+ - Иван Осипов (программист)
+ - Виктория Шель (дизайнер)
+ - Арсений Кадочников (сценарист)
+ - Артур Сайфутдинов (геймдизайнер)
+ - Никита Козлов (аналитик)
+ 
+ Отдельная благодарность:
+ - Миша Сластников (музыкант)
+ 
+ """
 
 
 ################################################################################
@@ -386,9 +391,6 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title" outlines [(0, "#000", 2, 2)]
 
-            text "[config.version]":
-                style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -403,10 +405,9 @@ style main_menu_frame:
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
+    xpos 100
     xmaximum 1200
-    yalign 1.0
+    yalign 0.1
     yoffset -30
 
 style main_menu_text:
@@ -432,19 +433,15 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
-
     frame:
         style "game_menu_outer_frame"
 
         hbox:
 
             ## Резервирует пространство для навигации.
-            frame:
-                style "game_menu_navigation_frame"
+            if not main_menu:
+                frame:
+                    style "game_menu_navigation_frame"
 
             frame:
                 style "game_menu_content_frame"
@@ -458,7 +455,8 @@ screen game_menu(title, scroll=None, yinitial=0.0):
                         draggable True
                         pagekeys True
 
-                        side_yfill True
+                        ysize 750
+
 
                         vbox:
                             transclude
@@ -482,10 +480,14 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
+    if not main_menu:
+        use navigation
 
     textbutton _("Вернуться"):
-        style "return_button"
+        if main_menu:
+            style "return_button_menu"
+        else:
+            style "return_button"
 
         action Return()
 
@@ -508,11 +510,14 @@ style game_menu_label_text is gui_label_text
 style return_button is navigation_button
 style return_button_text is navigation_button_text
 
+style return_button_menu is navigation_button
+style return_button_menu_text is navigation_button_text
+
 style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background "gui/overlay/black.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -532,6 +537,7 @@ style game_menu_vscrollbar:
 style game_menu_side:
     spacing 15
 
+#название виджета
 style game_menu_label:
     xpos 75
     ysize 180
@@ -543,6 +549,11 @@ style game_menu_label_text:
 
 style return_button:
     xpos gui.navigation_xpos
+    yalign 1.0
+    yoffset -45
+
+style return_button_menu:
+    xpos 50
     yalign 1.0
     yoffset -45
 
@@ -567,17 +578,8 @@ screen about():
         style_prefix "about"
 
         vbox:
-
-            label "[config.name!t]"
-            text _("Версия [config.version!t]\n")
-
-            ## gui.about обычно установлено в options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
             text _(authors)
-
+            text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
 
 style about_label is gui_label
 style about_label_text is gui_label_text

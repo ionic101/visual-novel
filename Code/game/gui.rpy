@@ -28,7 +28,7 @@ define config.check_conflicting_properties = True
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#cccc00'
+define gui.accent_color = '#32c832'
 
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
 define gui.idle_color = '#888888'
@@ -67,7 +67,7 @@ define gui.text_font = "Gilroy-Light.otf"
 define gui.name_text_font = "BOWLER.otf"
 
 ## Шрифт, используемый текстом вне игры.
-define gui.interface_text_font = "SourceSansPro-Black.ttf"
+define gui.interface_text_font = "8bit.ttf"
 
 ## Размер нормального текста диалога.
 define gui.text_size = 30
@@ -76,7 +76,7 @@ define gui.text_size = 30
 define gui.name_text_size = 35
 
 ## Размер текста в пользовательском интерфейсе.
-define gui.interface_text_size = 33
+define gui.interface_text_size = 40
 
 ## Размер заголовков в пользовательском интерфейсе.
 define gui.label_text_size = 36
@@ -91,7 +91,7 @@ define gui.title_text_size = 75
 ## Главное и игровое меню. #####################################################
 
 ## Изображения, используемые в главном и игровом меню.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "gui/overlay/black.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -233,7 +233,7 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 define gui.slot_button_width = 414
 define gui.slot_button_height = 309
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
+define gui.slot_button_text_size = 30
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
@@ -255,8 +255,8 @@ define gui.file_slot_rows = 2
 
 ## Местоположение левого края навигационных кнопок по отношению к левому краю
 ## экрана.
-define gui.navigation_xpos = 500
-define gui.navigation_ypos = 130
+define gui.navigation_xpos = 100
+define gui.navigation_ypos = 200
 
 ## Вертикальная позиция индикатора пропуска.
 define gui.skip_ypos = 15
@@ -387,7 +387,7 @@ define gui.nvl_spacing = 15
 
 ## Местоположение, ширина и выравнивание заголовка, показывающего имя говорящего
 ## персонажа.
-define gui.nvl_name_xpos = 645
+define gui.nvl_name_xpos = 0
 define gui.nvl_name_ypos = 0
 define gui.nvl_name_width = 225
 define gui.nvl_name_xalign = 1.0

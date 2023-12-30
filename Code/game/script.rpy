@@ -95,6 +95,6 @@ label start:
     call episode_6
     call episode_7
     call episode_8
-    call show_end_credit
+    #call show_end_credit
 
     return
