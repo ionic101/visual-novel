@@ -87,12 +87,12 @@ transform center:
 
 
 label start:
-    call episode_1 
-    call episode_2
-    call episode_3
-    call episode_4
-    call episode_5
-    call episode_6
+    #call episode_1 
+    #call episode_2
+    #call episode_3
+    #call episode_4
+    #call episode_5
+    #call episode_6
     call episode_7
     call episode_8
     call show_end_credit

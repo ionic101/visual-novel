@@ -6,7 +6,8 @@ label episode_5:
     call start_work
     call talking_with_director
     #call task_2
-    
+    stop bgm
+
     return
 
 
@@ -22,7 +23,7 @@ label start_work:
 
     show senior_image at right
     show boss_image
-    
+    play bgm "sounds/bg_main_music.mp3" volume 2
 
     boss "- Познакомься, [gg.name], это твой наставник Ростислав Вадимович. Самый опытный разработчик, которого я только знаю. Уверен, ты многому у него научишься, и вы отлично сработаетесь."
     boss "Что ж, Ростислав, отдаю этого мальца в твои руки. Дерзайте! И не забывай, что уже не за горами представление проекта."
@@ -52,11 +53,12 @@ label start_work:
 
     gg "-Понятно, Ростислав Вадимович, я сделаю всё что в моих силах"
 
+    play bgm "sounds/bg_rave.mp3"
     call start_game_sql
-
+    stop bgm
     scene office with fade
     show senior_image with dissolve
-
+    play bgm "sounds/bg_main_music.mp3" volume 2
     gg "-Ростислав Вадимович, я выполнил ваше задание"
 
     senior "-Ну-ка посмотрим…"
