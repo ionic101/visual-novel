@@ -13,7 +13,7 @@ label episode_8:
     call scene_2
     call scene_3
     call scene_4
-
+    stop bgm
 
     return
 
@@ -28,13 +28,15 @@ label start_episode_8:
 
 label scene_1:
     scene machine_image with fade
+    play bgm "sounds/pumping.mp3" volume 2
 
     machine "- Провожу сканирование биометрических данных. Ваш рейтинг 98/100, заказ готов. Хорошего вечера!"
 
     "{i}*К автомату следом подходит незнакомец, чтобы заказать кофе*"
-
+    
+    play music "sounds/interpreter.mp3"
     machine "В исполнении заказа отказано, так как ваш рейтинг слишком низок."
-
+    stop music
     person "- Как же так… "
 
     gg "Похоже он действительно этого заслуживает"
@@ -61,7 +63,8 @@ label scene_2:
 label scene_3:
     scene office with fade
 
-    show girl_image with dissolve
+    show girl_image at left with dissolve
+    show gg_image at right with dissolve
 
     gg "Привет, Ада, выглядишь просто сногсшибательно."
 
@@ -73,11 +76,17 @@ label scene_3:
 
     gg "Мне срочно нужно поговорить с директором!"
 
+    hide girl_image
+    hide gg_image
+
     return
 
 
 label scene_4:
     scene boss_office with fade
+
+    show boss_image at left with dissolve
+    show gg_image at right with dissolve
 
     gg "ЭТО КАКОЙ-ТО БЕСПРЕДЕЛ! Я РАБОТАЛ НЕ РАДИ ЭТОГО!"
 
@@ -90,18 +99,31 @@ label scene_4:
     boss "Подожди, [gg.name], давай поговорим с тобой как взрослые люди. Жизнь полна несправедливости, кто-то всегда будет на вершине олимпа, а кто-то будет на дне. Этого никак не избежать."
     boss "Ну включи ты голову. Сейчас тобой правит твой юношеский максимализм. Он затмевает твой разум, и ты не видишь всех перспектив этого проекта. Тебя ждёт огромный карьерный рост, ты очень талантливый парень, а система ещё не совершенна и бывают мелки сбои."
     boss "Поработаешь полгодика и станешь моим замом. Пойми, мы будем в шо-ко-ла-де. Нужно один раз прочувствовать это, чтобы осознать всю прелесть такой жизненной позиции."
+
+    hide boss_image
+    hide gg_image
+    show boss_image
+
     boss "Ну что, [gg.name], ты со мной?"
 
     menu:
         "ДА":
             jump say_yes
+            stop bgm
+            hide boss_image with dissolve
         "НЕТ":
             jump say_no
-
+            stop bgm
+            hide boss_image with dissolve
     return
 
 
 label say_yes:
+    play bgm "sounds/calm.mp3"
+
+    show boss_image at left with dissolve
+    show gg_image at right with dissolve
+
     gg "Да, извините, я сглупил, я с вами..."
 
     boss "Ну вот и отлично, ты вовремя одумался."
@@ -115,11 +137,16 @@ label say_yes:
 
     scene bg_office with fade
 
-    show girl_image
+    show girl_image at left
+    show gg_image at right
 
+    play bgm "sounds/sad.mp3"
     girl "Ну что? Что он сказал?"
 
     gg "Неважно..."
+
+    hide girl_image
+    show girl_sad at left
 
     girl "Не поняла. Что мы будем делать?"
 
@@ -130,6 +157,10 @@ label say_yes:
     gg "Просто пойми, так будет лучше для всех! Мы же в безопасности..."
 
     girl "Мы? Мы больше с тобой никогда не увидимся! Я увольняюсь! Прощай!"
+
+    hide gg_image
+    hide girl_sad
+    show gg_blissful
 
     gg "Ада..."
 
@@ -163,6 +194,11 @@ label back_to_work:
 
 
 label say_no:
+    play bgm "sounds/bg_main_music.mp3"
+
+    show boss_image at left with dissolve
+    show gg_image at right with dissolve
+
     gg "Извините, но при всё уважении к вам, я не могу продолжать работать над этим проектом. Сила и свобода – вот что делает человека прекрасным. Слабость и рабство никогда не создавали никого, кроме злых."
 
     boss "Ну что ж… Боюсь наши пути на этом расходятся. Даю тебе пару дней, чтобы передать все дела по проекту и заодно подумать ещё раз о своём выборе. Я ведь могу позаботиться, чтобы тебя не взяла на работу ни одна IT-компания более того, я могу организовать тебе личную встречу с Ростиславом)))"
@@ -175,19 +211,26 @@ label say_no:
 
     scene bg_office with fade
 
-    show girl_image with fade
+    show girl_image at left with dissolve
+    show gg_image at right with dissolve
 
     girl "ну что? Как всё прошло?"
+
+    hide gg_image
+    show gg_blissful at right
 
     gg "Это ужасный, аморальный человек. Я остановлю всё это во что бы то ни стало!"
 
     girl "Но как?"
 
+    hide gg_blissful
+    show gg_image at right
+
     gg "Нужно уничтожить базу данных, это на долгое время выведет систему из строя. Мы поднимем общественный резонанс, я уверен, что большинство нас поддержит."
 
     
     hide girl_image
-    show girl_flirty with dissolve
+    show girl_flirty at left with dissolve
     
 
     girl "Я обязательно тебя поддержу, ведь я люблю тебя!"
@@ -198,7 +241,13 @@ label say_no:
 
     girl "Но как ты собираешь уничтожить базу данных, не имея прямого доступа к ней?"
 
+    hide gg_image
+    show gg_embarrassed at right
+
     gg "Можно попробовать сделать это с помощью SQL-инъекций"
+
+    hide gg_embarrassed
+    show gg_image at right
 
     girl "Первый раз про такое слышу…"
 
@@ -210,7 +259,8 @@ label say_no:
     gg "Сейчас мы это проверим"
 
     scene bg_office with fade
-    show girl_image
+    show girl_image at left
+    show gg_pleased at right
 
     gg "Походу получилось! Адель, проверь свой рейтинг. У меня вот пусто"
     

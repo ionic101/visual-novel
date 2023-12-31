@@ -13,7 +13,7 @@ label episode_4:
     call get_job
     call interview
     call congratulations
-
+    stop bgm
     return
 
 
@@ -29,6 +29,7 @@ label get_job:
     scene office
 
     show gg_pleased
+    play bgm "sounds/bg_main_music.mp3" volume 2
     "Неужели я буду здесь работать?"
  
     robot "Здравствуйте, [gg.name], через 5 минут Вас ожидают на собеседование в отделе разработки кабинет Р-219"

@@ -5,7 +5,8 @@ label episode_7:
     call start_episode_7
     call company_party
     call walking
-
+    stop bgm
+    stop music
     return
 
 
@@ -22,6 +23,7 @@ label company_party:
 
     show boss_image at left with dissolve
     show gg_image at right with dissolve
+    play bgm "sounds/pumping.mp3"
 
     boss "Здравствуй, [gg.name], как тебе наш праздничный банкет?"
     
@@ -42,22 +44,36 @@ label company_party:
     stop bgm
     play bgm "sounds/bg_romantic.mp3"
 
+    show gg_blissful with dissolve
+
     "{i}*Вдалеке офиса я замечаю кого-то уже знакомого*"
     "О боже кто это…"
     "{i}*Время как будто остановилось, а сердце начало биться всё быстрее и быстрее*"
     "Какая изящная походка, какие милые черты лица… А глаза… Глаза — это искры, которые разжигают во мне пламя страсти. А какая красивая у неё…"
 
-    show girl_image with dissolve
+    hide gg_blissful
+    show gg_embarrassed at right
+    show girl_image at left with dissolve
 
     girl "Привет!"
     gg "Ой… Пр.. Привет."
+    hide girl_image
+    show girl_flirty at left
     girl "Извини, что побеспокоила тебя, ты, видимо, был погружён в какие-то свои мысли… Просто я увидела, что ты тоже здесь без компании, и хотела бы скрасить твоё одиночество, если ты не против конечно"
+    hide gg_embarrassed
+    show gg_pleased at right
     gg "Конечно я не против! Как тебя зовут?"
+    hide girl_flirty
+    show girl_image at left
     girl "Адель, а тебя?"
     gg "[gg.name]. А ты из какого отдела?"
     girl "Я из аналитики. А тебя даже и спрашивать не буду… Уже по всей компании расползся слух об увольнении Ростислава и твоём назначении на должность"
+    hide gg_pleased
+    show gg_blissful at right
     gg "Даа, жаль этого добряка…"
     girl "Полностью согласна, он хоть и был занудой, но всегда оставался человеком. Может ну этот скучный корпоратив, пойдём прогуляемся?"
+    hide gg_blissful
+    show gg_embarrassed
     gg "Конечно, я только за!"
 
     stop bgm
@@ -68,7 +84,12 @@ label company_party:
 label walking:
     scene park with fade
 
-    show girl_image with dissolve
+    show girl_image at left with dissolve
+    show gg_image at right with dissolve
+    play bgm "sounds/bg_main_music.mp3" volume 2
+    play music "sounds/night_forest.mp3"
+
+
 
     girl "Слушай, а как у тебя так быстро получилось добиться успеха в своей сфере?"
     gg "Ну знаешь, я просто стремился к своей цели, долго работал, учился, и вот теперь я главный разработчик гос проекта, гуляю под луной с очень красивой девушкой"
