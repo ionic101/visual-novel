@@ -4,6 +4,7 @@ image sc_episode_6 = "images/episodes/episode_6.png"
 label episode_6:
     call start_episode_6
     call project_presentation
+    stop bgm
 
     return
 
@@ -21,6 +22,7 @@ label project_presentation:
 
     boss "До выступления осталось 5 минут. У нас точно всё готово?"
     show boss_image with dissolve
+    play bgm "sounds/bg_main_music.mp3" volume 2
 
     senior " Всё на высоте, но на всякий случай, проверим оборудование ещё раз, а вы пока повторите текст."
     show senior_image at left with dissolve
@@ -36,10 +38,11 @@ label project_presentation:
 
 label global_problem:
     scene workplace with dissolve
-
+    play bgm "sounds/interpreter.mp3"
     senior "Чёрт возьми, этого нам не хватало…"
     boss "Это ещё что такое *****. НЕМЕДЛЕННО ВСЁ ИСПРАВИТЬ!!! ВЫ НЕ ПОНИМАЕТЕ!!! ТАМ ТАКИЕ ЛЮДИ!!! ДА НАС ВСЕХ…"
-    
+    stop bgm
+    play bgm "sounds/bg_main_music.mp3" volume 2
     gg "Прошу, успокойтесь, пожалуйста, я знаю что делать."
 
     $ choose_1 = 1

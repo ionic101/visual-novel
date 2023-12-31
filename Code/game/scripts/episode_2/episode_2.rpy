@@ -8,7 +8,7 @@ image phone_call = "images/objects/phone_call.png"
 label episode_2:
     call start_episode_2
     call call_parents
-
+    stop bgm
     return
 
 
@@ -22,8 +22,8 @@ label start_episode_2:
 
 label call_parents:
     scene home with dissolve
-    play bgm "sounds/bg_main_music.mp3" volume 2
     show gg_blissful with dissolve
+    play bgm "sounds/bg_main_music.mp3" volume 2
     "Ну вот и всё… Ещё один этап жизни позади. Это было славное время. Столько тёплых воспоминаний о студенческой жизни. Эх… Пройти бы ещё раз это всё. Я уже скучаю по своим друзьям. "
     stop bgm
     hide gg_blissful
@@ -49,7 +49,7 @@ label call_parents:
     #окончания звонка
 
     show gg_blissful
-    "Эхх… А ведь на самом деле мама права… Я уже столько лет сижу у родителей на шее. Надо действовать. Ведь как говорил классик: Безделье — игрушка дьявола. Я прямо сейчас сяду и найду работу! Просто вот так сяду и найду!"
+    "Эхх… А ведь на самом деле мама права… Я уже столько лет сижу у родителей на шее. Надо действовать. Ведь как говорил классик: \"безделье — игрушка дьявола\". Я прямо сейчас сяду и найду работу! Просто вот так сяду и найду!"
     hide gg_blissful
 
     return
@@ -83,7 +83,6 @@ label phone_call:
     pause 2.0
 
     stop sound
-
     hide phone_call with Dissolve(0.5)
 
     return
