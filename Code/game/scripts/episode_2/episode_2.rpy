@@ -8,7 +8,7 @@ image phone_call = "images/objects/phone_call.png"
 label episode_2:
     call start_episode_2
     call call_parents
-    stop bgm
+    stop music
     return
 
 
@@ -23,12 +23,12 @@ label start_episode_2:
 label call_parents:
     scene home with dissolve
     show gg_blissful with dissolve
-    play bgm "sounds/bg_main_music.mp3" volume 2
+    play music "sounds/bg_main_music.mp3"
     "Ну вот и всё… Ещё один этап жизни позади. Это было славное время. Столько тёплых воспоминаний о студенческой жизни. Эх… Пройти бы ещё раз это всё. Я уже скучаю по своим друзьям. "
-    stop bgm
+    stop music
     hide gg_blissful
     call phone_call
-    play bgm "sounds/bg_main_music.mp3" volume 2
+    play music "sounds/bg_main_music.mp3"
     gg "-Алло"
     mother "-Алло, сынок привет!"
     gg "-Привет мам…"

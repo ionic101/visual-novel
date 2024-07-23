@@ -5,7 +5,7 @@ define music_fadeout = 5.0
 define screen_fadeout = 5.0
 define screen_delay = 1.0
 
-define audio.end_credit_music = "sounds/last_summer.ogg"
+define audio.end_credit_music = "sounds/last_summer.mp3"
 
 
 image end_credit:
@@ -18,7 +18,7 @@ image end_credit:
 label show_end_credit:
     $ _dismiss_pause = False
 
-    play music end_credit_music fadein 5.0 volume 0.1
+    play music end_credit_music fadein 5.0
 
     scene park with Fade(1.0, 1.0, 5.0)
 

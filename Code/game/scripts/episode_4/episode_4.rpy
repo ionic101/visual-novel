@@ -1,10 +1,5 @@
 define robot = Character("Робот", color="#df444a")
 
-# Определение каналов для звука
-define voice = 30
-define sfx = 20
-define bgm = 10
-
 image sc_episode_4 = "images/episodes/episode_4.png"
 
 
@@ -13,7 +8,7 @@ label episode_4:
     call get_job
     call interview
     call congratulations
-    stop bgm
+    stop music
     return
 
 
@@ -29,7 +24,7 @@ label get_job:
     scene office
 
     show gg_pleased
-    play bgm "sounds/bg_main_music.mp3" volume 2
+    play music "sounds/bg_main_music.mp3"
     "Неужели я буду здесь работать?"
  
     robot "Здравствуйте, [gg.name], через 5 минут Вас ожидают на собеседование в отделе разработки кабинет Р-219"
@@ -37,7 +32,7 @@ label get_job:
     hide gg_pleased
     scene boss_office
 
-    play bgm "sounds/calm.mp3" volume 0.2
+    play music "sounds/calm.mp3"
 
     show gg_image at right
     gg "-Здравствуйте… Я к вам на собеседование."
