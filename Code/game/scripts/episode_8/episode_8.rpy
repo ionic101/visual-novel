@@ -13,7 +13,7 @@ label episode_8:
     call scene_2
     call scene_3
     call scene_4
-    stop bgm
+    stop music
 
     return
 
@@ -28,7 +28,7 @@ label start_episode_8:
 
 label scene_1:
     scene machine_image with fade
-    play bgm "sounds/pumping.mp3" volume 2
+    play music "sounds/pumping.mp3"
 
     machine "- Провожу сканирование биометрических данных. Ваш рейтинг 98/100, заказ готов. Хорошего вечера!"
 
@@ -109,17 +109,17 @@ label scene_4:
     menu:
         "ДА":
             jump say_yes
-            stop bgm
+            stop music
             hide boss_image with dissolve
         "НЕТ":
             jump say_no
-            stop bgm
+            stop music
             hide boss_image with dissolve
     return
 
 
 label say_yes:
-    play bgm "sounds/calm.mp3"
+    play music "sounds/calm.mp3"
 
     show boss_image at left with dissolve
     show gg_image at right with dissolve
@@ -140,7 +140,7 @@ label say_yes:
     show girl_image at left
     show gg_image at right
 
-    play bgm "sounds/sad.mp3"
+    play music "sounds/sad.mp3"
     girl "Ну что? Что он сказал?"
 
     gg "Неважно..."
@@ -194,7 +194,7 @@ label back_to_work:
 
 
 label say_no:
-    play bgm "sounds/bg_main_music.mp3"
+    play music "sounds/bg_main_music.mp3"
 
     show boss_image at left with dissolve
     show gg_image at right with dissolve

@@ -1,11 +1,6 @@
 define rector = Character("Ректор", color="#1ada09")
 define students = Character("Выпускники", color="#f5f120")
 
-# Определение каналов для звука
-define voice = 30
-define sfx = 20
-define bgm = 10
-
 image sc_episode_1 = "images/episodes/episode_1.png"
 
 
@@ -27,8 +22,7 @@ label start_episode_1:
 label graduation:
     scene urfu with dissolve
 
-    play bgm "sounds/episode1_music.mp3" volume 0.5
-    #play music "sounds/first_monologue.mp3" noloop
+    play music "sounds/episode1_music.mp3"
     rector "Уважаемые студенты! Поздравляю вас с этим великолепным достижением – получением диплома!"
     rector "Это значимый момент в вашей жизни, который подчеркивает ваш труд, упорство и стремление к знаниям."   
     rector "Вы прошли долгий и трудный путь обучения, полный вызовов и усилий. Теперь, держа в руках свой диплом, вы можете с гордостью смотреть на все, что достигли."
@@ -39,6 +33,6 @@ label graduation:
 
     students "УРААА! РТФ — ЧЕМПИОН! РТФ — ЧЕМПИОН! РТФ — ЧЕМПИОН!"
 
-    stop bgm
+    stop music fadeout 1
 
     return

@@ -5,7 +5,7 @@ label episode_7:
     call start_episode_7
     call company_party
     call walking
-    stop bgm
+    stop music
     stop music
     return
 
@@ -23,7 +23,7 @@ label company_party:
 
     show boss_image at left with dissolve
     show gg_image at right with dissolve
-    play bgm "sounds/pumping.mp3"
+    play music "sounds/pumping.mp3"
 
     boss "Здравствуй, [gg.name], как тебе наш праздничный банкет?"
     
@@ -41,8 +41,8 @@ label company_party:
     boss "Он видимо не понимает какое сладкое будущее ждёт нас – создателей этого проекта. Ну что ж отдохни и расслабься сегодня, ты заслужил, но впереди ещё много работы."
     hide gg_image with dissolve
     hide boss_image with dissolve
-    stop bgm
-    play bgm "sounds/bg_romantic.mp3"
+    stop music
+    play music "sounds/bg_romantic.mp3"
 
     show gg_blissful with dissolve
 
@@ -76,7 +76,7 @@ label company_party:
     show gg_embarrassed
     gg "Конечно, я только за!"
 
-    stop bgm
+    stop music
     return
 
 
@@ -86,7 +86,7 @@ label walking:
 
     show girl_image at left with dissolve
     show gg_image at right with dissolve
-    play bgm "sounds/bg_main_music.mp3" volume 2
+    play music "sounds/bg_main_music.mp3"
     play music "sounds/night_forest.mp3"
 
 
